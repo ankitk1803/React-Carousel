@@ -1,0 +1,74 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Carousel container */
+  .carousel-container {
+    position: relative;
+    max-width: 800px; /* Adjust as needed */
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Carousel image */
+  .carousel-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Carousel buttons */
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .carousel-button:active {
+    transform: translateY(-50%) scale(0.9);
+  }
+  
+  /* Left button */
+  .carousel-button--left {
+    left: 1.5rem;
+  }
+  
+  /* Right button */
+  .carousel-button--right {
+    right: 1.5rem;
+  }
+  
+  /* Optional: Add a gradient overlay for better button visibility */
+  .carousel-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+    pointer-events: none; /* Ensure clicks pass through to the image */
+  }
